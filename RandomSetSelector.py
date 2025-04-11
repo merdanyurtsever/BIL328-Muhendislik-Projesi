@@ -10,4 +10,7 @@ import librosa
 import soundfile as sf
 
 # Define the path to the dataset
-dataset_path = 'D:/Datasets/GTZAN/genres_original'
+dataset_path = 'fma_small'
+# Define the path to the output folder
+output_path = 'random_dataset'
+# Define the genres to select from

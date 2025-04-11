@@ -12,6 +12,8 @@ fma_small/*
 fma_small.zip
 # Ignore all files in the fma_small_original.zip directory except for the .gitkeep file
 fma_small_original.zip
+fma_metadata/*
+
 
 # Ignore desktop configuration files
 desktop.ini
