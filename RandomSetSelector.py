@@ -23,14 +23,18 @@ tracks_df = pd.read_csv(tracks_metadata_path, index_col=0, header=[0, 1])
 # Extract the genre and track ID mapping
 track_genre_mapping = tracks_df[('track', 'genre_top')]
 
-# Define the genres to select from (you can modify this list based on your needs)
-selected_genres = ['Rock', 'Pop', 'Hip-Hop', 'Jazz', 'Classical', 'Electronic', 'Country', 'Blues']
+# Dynamically extract all unique genres from the metadata
+unique_genres = track_genre_mapping.dropna().unique()
 
 # Ensure the output directory exists
 os.makedirs(output_path, exist_ok=True)
 
 # Create a dictionary to store genre-to-filepath mapping
-genre_filepaths = {genre: [] for genre in selected_genres}
+genre_filepaths = {genre: [] for genre in unique_genres}
+
+# Sanitize genre names to remove invalid characters for folder names
+def sanitize_genre_name(genre):
+    return genre.replace('/', '_').replace(' ', '_')  # Replace invalid characters with underscores
 
 # Iterate through all files in the fma_small directory
 for root, _, files in os.walk(dataset_path):
@@ -47,18 +51,29 @@ for root, _, files in os.walk(dataset_path):
                 if genre in genre_filepaths:
                     genre_filepaths[genre].append(os.path.join(root, file))
 
-# Ensure each genre has exactly 100 unique tracks
+# Process each genre and select 10% of tracks
 for genre, filepaths in genre_filepaths.items():
-    # Randomly select 100 tracks from the available file paths
-    selected_filepaths = random.sample(filepaths, 100)
+    # Sanitize the genre name for folder creation
+    sanitized_genre = sanitize_genre_name(genre)
+
+    # Calculate 10% of the total tracks for the genre
+    num_to_select = min(len(filepaths), max(1, len(filepaths) // 10))  # Ensure at least 1 track is selected
+
+    # Randomly select the calculated number of tracks
+    selected_filepaths = random.sample(filepaths, num_to_select)
 
     # Create a folder for the genre in the output directory
-    genre_output_path = os.path.join(output_path, genre)
+    genre_output_path = os.path.join(output_path, sanitized_genre)
     os.makedirs(genre_output_path, exist_ok=True)
 
     # Copy the selected tracks to the genre folder
     for filepath in selected_filepaths:
         destination_path = os.path.join(genre_output_path, os.path.basename(filepath))
-        shutil.copy(filepath, destination_path)
+        try:
+            shutil.copy(filepath, destination_path)
+        except PermissionError as e:
+            print(f"PermissionError: Could not copy {filepath} to {destination_path}. {e}")
+        except Exception as e:
+            print(f"Error: Could not copy {filepath} to {destination_path}. {e}")
 
-print("Random selection completed.")
+print("10% selection completed for all genres.")
