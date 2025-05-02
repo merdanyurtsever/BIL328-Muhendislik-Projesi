@@ -21,3 +21,4 @@ desktop.ini
 
 convert_notebook.py
 cache/preprocessed_data.npz
+cache/
