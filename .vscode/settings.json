@@ -1,4 +1,5 @@
 {
     "python.analysis.autoImportCompletions": true,
-    "python-envs.pythonProjects": []
+    "python-envs.pythonProjects": [],
+    "python.defaultInterpreterPath": "/home/debian/pydebian/bin/python3"
 }

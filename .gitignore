@@ -24,3 +24,5 @@ cache/preprocessed_data.npz
 cache/
 .vscode/settings.json
 .vscode/*
+Main_LSTM1Overfitted.html
+Main_LSTM2.html
