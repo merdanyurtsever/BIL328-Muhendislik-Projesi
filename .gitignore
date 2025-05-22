@@ -26,3 +26,6 @@ cache/
 .vscode/*
 Main_LSTM1Overfitted.html
 Main_LSTM2.html
+Main_1LSTM1Overfitted.html
+Main_2LSTM2.html
+Main_3KBest.html
