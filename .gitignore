@@ -30,3 +30,24 @@ Main_1LSTM1Overfitted.html
 Main_2LSTM2.html
 Main_3KBest.html
 Main_4KBest.html
+Main_5KBest.html
+Main_6KBest.html
+Main_7KBest.html
+Main_8KBest.html
+Main_9Depthfrom8to4.html
+Main_10Depthfrom4to2randomfrom100to90.html
+Main_11featuresfrom100to150andrandomfrom90to80.html
+Main_12randomfrom80to60.html
+Main_13randomfrom60to40.html
+Main_14randomfrom40to30andlayersfrom2to3.html
+Main_15randomfrom30to20.html
+Main_16treshholdfrom015to02.html
+Main_17depthfrom3to2.html
+Main_18hiddenfrom128to64.html
+Main_19hiddenfrom64to256.html
+Main_20hiddenfrom256to128andfeaturesfrom150to200.html
+Main_21batchfrom256to128.html
+Main_22batchfrom128to512.html
+Main_23featuresfrom200to250.html
+Main_24sequencefrom10to5.html
+Main_25oversampling edited.html
