@@ -56,3 +56,13 @@ Main_27afteradvancedfeatureselection.html
 Main_28simplifiedandchangedalotofthings.html
 Main_29.html
 extract_data.py
+CLEANUP_SUMMARY.md
+Advanced_Temporal_Features.py
+fixed_temporal_training.py
+.gitignore
+IMPLEMENTATION_SUMMARY.md
+music_genre_lstm_model.pth
+test_temporal_system.py
+__pycache__/Advanced_Temporal_Features.cpython-311.pyc
+__pycache__/fixed_temporal_training.cpython-311.pyc
+__pycache__/Main.cpython-311.pyc

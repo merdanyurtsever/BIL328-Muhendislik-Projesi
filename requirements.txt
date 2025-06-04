@@ -8,3 +8,5 @@ librosa
 soundfile
 tqdm
 joblib
+torch
+torchvision
