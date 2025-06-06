@@ -1,0 +1,44 @@
+🎵 OPTIMIZED BorderlineSMOTE + LSTM Music Genre Classification
+🎯 Target: Match CNN model performance (91.01% accuracy)
+======================================================================
+
+📂 Step 1: Loading data...
+✅ Veriler yüklendi: 49598 örnək, 518 özellik
+🎯 Sınıf sayısı: 16
+🎵 Sınıflar: ['Blues', 'Classical', 'Country', 'Easy Listening', 'Electronic', 'Experimental', 'Folk', 'Hip-Hop', 'Instrumental', 'International', 'Jazz', 'Old-Time / Historic', 'Pop', 'Rock', 'Soul-RnB', 'Spoken']
+
+🔄 Step 2: Data splitting (80% train, 20% test)...
+Train: 39678, Test: 9920
+
+🎯 Step 3: Feature selection (225 features, same as CNN)...
+Features reduced: 518 → 225
+
+⚖️ Step 4: Optimized data balancing...
+⚖️ Optimized BorderlineSMOTE + RandomOverSampler dengeleme başlatılıyor...
+📊 Orijinal dağılım: {np.int64(0): np.int64(88), np.int64(1): np.int64(984), np.int64(2): np.int64(155), np.int64(3): np.int64(19), np.int64(4): np.int64(7498), np.int64(5): np.int64(8486), np.int64(6): np.int64(2242), np.int64(7): np.int64(2842), np.int64(8): np.int64(1663), np.int64(9): np.int64(1111), np.int64(10): np.int64(457), np.int64(11): np.int64(443), np.int64(12): np.int64(1866), np.int64(13): np.int64(11346), np.int64(14): np.int64(140), np.int64(15): np.int64(338)}
+🔧 RandomOverSampler ile az örnekli sınıflar artırılıyor: {np.int64(3): 50}
+📈 RandomOverSampler sonrası: {np.int64(0): np.int64(88), np.int64(1): np.int64(984), np.int64(2): np.int64(155), np.int64(3): np.int64(50), np.int64(4): np.int64(7498), np.int64(5): np.int64(8486), np.int64(6): np.int64(2242), np.int64(7): np.int64(2842), np.int64(8): np.int64(1663), np.int64(9): np.int64(1111), np.int64(10): np.int64(457), np.int64(11): np.int64(443), np.int64(12): np.int64(1866), np.int64(13): np.int64(11346), np.int64(14): np.int64(140), np.int64(15): np.int64(338)}
+🎯 BorderlineSMOTE ile final dengeleme...
+✅ BorderlineSMOTE sonrası final dağılım: {np.int64(0): np.int64(9076), np.int64(1): np.int64(9076), np.int64(2): np.int64(9076), np.int64(3): np.int64(9076), np.int64(4): np.int64(9076), np.int64(5): np.int64(9076), np.int64(6): np.int64(9076), np.int64(7): np.int64(9076), np.int64(8): np.int64(9076), np.int64(9): np.int64(9076), np.int64(10): np.int64(9076), np.int64(11): np.int64(9076), np.int64(12): np.int64(9076), np.int64(13): np.int64(11346), np.int64(14): np.int64(9076), np.int64(15): np.int64(9076)}
+🎉 Dengeleme tamamlandı: 147486 örnək
+
+📊 Step 5: MinMaxScaler normalization (same as CNN)...
+✅ Normalization completed
+
+🔄 Step 6: Creating LSTM sequences...
+🔄 Sekans oluşturma: 15 zaman adımı, 15 özellik/adım
+✅ Sekans verisi oluşturuldu: torch.Size([147486, 15, 15])
+🔄 Sekans oluşturma: 15 zaman adımı, 15 özellik/adım
+✅ Sekans verisi oluşturuldu: torch.Size([9920, 15, 15])
+
+⚖️ Step 7: Calculating class weights...
+Class weights: {np.int64(0): np.float64(1.0156318862935214), np.int64(1): np.float64(1.0156318862935214), np.int64(2): np.float64(1.0156318862935214), np.int64(3): np.float64(1.0156318862935214), np.int64(4): np.float64(1.0156318862935214), np.int64(5): np.float64(1.0156318862935214), np.int64(6): np.float64(1.0156318862935214), np.int64(7): np.float64(1.0156318862935214), np.int64(8): np.float64(1.0156318862935214), np.int64(9): np.float64(1.0156318862935214), np.int64(10): np.float64(1.0156318862935214), np.int64(11): np.float64(1.0156318862935214), np.int64(12): np.float64(1.0156318862935214), np.int64(13): np.float64(0.8124338974087785), np.int64(14): np.float64(1.0156318862935214), np.int64(15): np.float64(1.0156318862935214)}
+
+🔄 Step 8: Creating data loaders...
+Train batches: 2305, Test batches: 155
+
+🧠 Step 9: Creating optimized LSTM model...
+Model created: 5,172,432 parameters
+
+🏋️ Step 10: Training optimized LSTM...
+🚀 Optimized LSTM eğitimi başlatılıyor (cuda)

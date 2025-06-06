@@ -66,3 +66,21 @@ test_temporal_system.py
 __pycache__/Advanced_Temporal_Features.cpython-311.pyc
 __pycache__/fixed_temporal_training.cpython-311.pyc
 __pycache__/Main.cpython-311.pyc
+
+__pycache__/extract_data.cpython-311.pyc
+__pycache__/test_temporal_system.cpython-311.pyc
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore virtual environment directories
+venv/
+
+# Ignore Jupyter Notebook output files
+*.ipynb_checkpoints
